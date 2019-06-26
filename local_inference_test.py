@@ -44,6 +44,7 @@ if __name__ == "__main__":
     PATH_TO_CKPT = args.model
 
     image_path = args.img
+    image_path = '/Users/guilhembau/PycharmProjects/6dbytes/vision_train/object_detection_demo/pouring_42.jpg'
 
     assert os.path.isfile(PATH_TO_CKPT)
     assert os.path.isfile(image_path)
