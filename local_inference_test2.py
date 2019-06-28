@@ -14,7 +14,7 @@ import os
 import glob
 
 # Path to frozen detection graph. This is the actual model that is used for the object detection.
-PATH_TO_CKPT = './models/frozen_inference_graph_rcnn_test1.pb'
+PATH_TO_CKPT = './models/frozen_inference_graph.pb'
 
 # List of the strings that is used to add correct label for each box.
 PATH_TO_LABELS = './models/label_map.pbtxt'
@@ -316,7 +316,7 @@ def camera_test():
 
     while True:
         ret, frame = camera.read()
-        reduction = 1.5
+        reduction = 2.5
         frame = cv2.resize(frame, (int(320/reduction), int(240/reduction)))
 
         print(type(frame))
@@ -413,30 +413,21 @@ def camera_test_speed():
                 "image_tensor:0"
             )
 
-
-
-
-
             import time
             import cv2
 
-            camera = cv2.VideoCapture()
-            time.sleep(1)
-            camera.open(0)
-            time.sleep(1)
-            opened = camera.isOpened()
-            time.sleep(1)
+            cv2.namedWindow("preview")
+            vc = cv2.VideoCapture(1)
 
-            if not opened:
-                print("Camera not open")
-                exit
-
-            camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1920/4)
-            camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080/4)
+            ret, frame = vc.read()
 
             while True:
-                ret, frame = camera.read()
-                reduction = 0.5
+
+
+                ret, frame = vc.read()
+
+
+                reduction = 1.5
                 frame = cv2.resize(frame, (int(320/reduction), int(240/reduction)))
 
                 #print(type(frame))
@@ -467,7 +458,7 @@ def camera_test_speed():
                     output_dict['detection_scores'],
                     category_index,
                     instance_masks=output_dict.get('detection_masks'),
-                    min_score_thresh=.01,
+                    min_score_thresh=.1,
                     use_normalized_coordinates=True,
                     max_boxes_to_draw=40,
                     line_thickness=8)
@@ -529,4 +520,24 @@ def test_camera():
     cv2.destroyAllWindows()
 
 
+def test2():
+    import cv2
+
+    cv2.namedWindow("preview")
+    vc = cv2.VideoCapture(1)
+
+    rval, frame = vc.read()
+
+    while True:
+
+        if frame is not None:
+            cv2.imshow("preview", frame)
+        rval, frame = vc.read()
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+
+#test2()
 camera_test_speed()
+#test_camera()
