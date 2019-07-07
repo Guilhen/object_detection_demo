@@ -1,38 +1,62 @@
 <annotation>
-	<folder>train</folder>
+	<folder>cups_empty_full_picks_clean_resized</folder>
 	<filename>56.jpg</filename>
-	<path>C:\Users\Guilhem\Dropbox\images\train\56.jpg</path>
+	<path>C:\Users\6d_guest\Desktop\cups_empty_full_picks_clean_resized\56.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>800</width>
-		<height>600</height>
+		<width>356</width>
+		<height>356</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>cup</name>
+		<name>empty_cup</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>103</xmin>
-			<ymin>2</ymin>
-			<xmax>312</xmax>
-			<ymax>306</ymax>
+			<xmin>38</xmin>
+			<ymin>23</ymin>
+			<xmax>72</xmax>
+			<ymax>79</ymax>
 		</bndbox>
 	</object>
 	<object>
-		<name>limit</name>
+		<name>empty_cup</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>121</xmin>
-			<ymin>69</ymin>
-			<xmax>297</xmax>
-			<ymax>111</ymax>
+			<xmin>295</xmin>
+			<ymin>29</ymin>
+			<xmax>341</xmax>
+			<ymax>92</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>puck</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>270</xmin>
+			<ymin>5</ymin>
+			<xmax>302</xmax>
+			<ymax>48</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>puck</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>56</xmin>
+			<ymin>8</ymin>
+			<xmax>89</xmax>
+			<ymax>51</ymax>
 		</bndbox>
 	</object>
 </annotation>
